@@ -17,6 +17,8 @@ public class StudentsController : ControllerBase
     [HttpGet]
     public IEnumerable<string> GetStudents()
     {
+        _logger.LogTrace("Getting students from DB");
+
         SqlConnection connection = new("Server=tcp:sqlserver-3inpb62cxvrms.database.windows.net;Database=sqldb-3inpb62cxvrms;Authentication=Active Directory Default;TrustServerCertificate=True");
         using (SqlCommand command = new SqlCommand("SELECT name FROM students", connection))
         {
@@ -29,5 +31,7 @@ public class StudentsController : ControllerBase
                 }
             }
         }
+
+        _logger.LogTrace("Getting students from DB succeeded.");
     }
 }

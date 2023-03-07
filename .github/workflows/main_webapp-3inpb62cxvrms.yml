@@ -57,4 +57,4 @@ jobs:
           app-name: 'webapp-3inpb62cxvrms'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_873554DE9F584062A34BC97DE7526104 }}
-          package: .net-app
+          package: .
